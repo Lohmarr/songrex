@@ -19,7 +19,7 @@ const genreData = [
   },
   {
     name: 'Indie',
-    image_name: 'indiegenre.jpg',
+    image_name: 'indie.jpg',
   },
   {
     name: 'Funk',
