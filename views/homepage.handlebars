@@ -5,9 +5,10 @@
     {{#each genres}}
     <div class="card-body painting">
       <h2>{{this.name}}</h2>
+      <a href="/genre/{{this.id}}">
       <img src="/images/{{this.image_name}}" alt="image representing genre" />
       <br>
-      <a href="/genre/{{this.id}}">View {{this.name}} songs</a>
+      View {{this.name}} songs</a>
     </div>
   {{/each}}
 </div>
