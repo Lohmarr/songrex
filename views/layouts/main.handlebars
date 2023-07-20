@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Songrex</title>
+  <link rel="stylesheet" type="text/css" href="/css/jass.css">
+  <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+</head>
+
+<body>
+  <header>
+    <h1>WELCOME TO SONGREX</h1>
+     <div class="logo-container">
+    <img src="/images/songrex.png" alt="Logo">
+  </div>
+  </header>
+  <nav>
+    <aside>
+      <h2>Enjoy the Songs!!</h2>
+    </aside>
+    <a href="/">Home</a>
+    {{#if loggedIn}}
+<button id="logout" href="#" class="btn-no-style">Logout</button>
+    <a href="/input">Add new song!</a>
+    <a href="/liked">View liked songs!</a>
+    {{else}}
+    <a href="/login">Login</a>
+    {{/if}}
+  </nav>
+  <main>
+    <div class="genre">
+      {{{body}}}
+    </div>
+  </main>
+  {{#if loggedIn}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+<section class="container">
+  <h3 class="genre-name">{{genre.name}}</h3>
+  <br>
+  <h4>Click Song for Preview!</h4>
+  <section class="flex-row justify-center">
+    {{#each genre.songs as |song|}}
+    {{> song-details}}
+    {{/each}}
+  </section>
+</section>

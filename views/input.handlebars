@@ -1,0 +1,42 @@
+<div class="row justify-space-between-md">
+  <div class="login-card">
+    <h2 class="page-title">Wanna add a song?!</h2>
+     <div class="instructional-video">
+      <h3>Here's how to add the Embed:</h3>
+      <iframe width="560" height="315" src="/videos/howToEmbed.mp4" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <form class="form signup-form input-form">
+      <div class="form-group">
+        <label for="title-input">Song Title:</label>
+        <input class="form-input" type="text" id="title-input" />
+      </div>
+      <div class="form-group">
+        <label for="artist-input">Artist:</label>
+        <input class="form-input" type="text" id="artist-input" />
+      </div>
+      <div class="form-group">
+        <label for="album-input">Album:</label>
+        <input class="form-input" type="text" id="album-input" />
+      </div>
+      <div class="form-group">
+        <label for="embed-input">Add your embed here:</label>
+        <input class="form-input" type="text" id="embed-input" />
+      </div>
+      <select name="genre-names" id="genre-names">
+                    <option value="" disabled selected>Select the genre!</option>
+                    <option value=1>Rock</option>
+                    <option value=2>Rap</option>
+                    <option value=3>Country</option>
+                    <option value=4>Pop</option>
+                    <option value=5>Indie</option>
+                    <option value=6>Funk</option>
+                    <option value=7>Electric</option>
+                  </select>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">Submit Song!</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="./js/input.js"></script>
