@@ -6,11 +6,11 @@ const likeButton = document.querySelector('.like-button');
     console.log(songId)
     try {
       const response = await fetch(`/api/like/${songId}`, {
-        method: 'PUT',
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({liked: true}),
+        credentials: 'include'
       });
       if (response.ok) {
         alert('Song liked!');
