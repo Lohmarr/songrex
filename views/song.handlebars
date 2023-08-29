@@ -1,8 +1,8 @@
 <section class="genre">
   <div class="song-details">
-    <h3>{{song.title}}</h3>
-    <p>Album: {{song.album}}</p>
-    <p>By: {{song.artist}}</p>
+    <h3 class="text">{{song.title}}</h3>
+    <p class="text">Album: {{song.album}}</p>
+    <p class="text">By: {{song.artist}}</p>
     {{{ song.embed }}}
     {{#if isLiked}}
     <button value="{{song.id}}" class="btn btn-primary like-button">Liked!</button>
@@ -13,3 +13,4 @@
 </section>
 
 <script src="/js/like.js"></script>
+<script src="./js/embed.js"></script>

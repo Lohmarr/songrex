@@ -103,7 +103,6 @@ router.get("/liked", withAuth, async (req, res) => {
     for (let i = 0; i < likedSongs.length; i++) {
       songs.push(await likedSongs[i].getSong());
     }
-    console.log("songs =", songs);
 
     res.render("liked", {
       songs,
