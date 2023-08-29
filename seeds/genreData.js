@@ -7,7 +7,7 @@ const genreData = [
   },
   {
     name: 'Rap',
-    image_name: 'rapgenre.jpg',
+    image_name: 'rapGenre.jpg',
   },
   {
     name: 'Country',

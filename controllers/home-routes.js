@@ -49,15 +49,27 @@ router.get("/genre/:id", withAuth, async (req, res) => {
 });
 
 // GET one song
-// Use the custom middleware before allowing the user to access the song
 router.get("/song/:id", withAuth, async (req, res) => {
   try {
     const songData = await Song.findByPk(req.params.id);
 
     const song = songData.get({ plain: true });
-    console.log("song data =", songData)
 
-    res.render("song", { song, loggedIn: req.session.loggedIn });
+    // Check if the current user has liked the song
+    let isLiked = false;
+    const likedSong = await LikedSong.findOne({
+      where: {
+        songId: req.params.id,
+        userId: req.session.user_id,
+      },
+    });
+
+    // If the user has liked the song, isLiked equals true
+    if (likedSong != null) {
+      isLiked = true;
+    }
+
+    res.render("song", { song, isLiked, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -86,7 +98,7 @@ router.get("/liked", withAuth, async (req, res) => {
       include: [Song],
     });
 
-    // Map over likedSongs to get the associated Song for each record
+    // Add liked songs associated with the user to the songs array
     const songs = [];
     for (let i = 0; i < likedSongs.length; i++) {
       songs.push(await likedSongs[i].getSong());

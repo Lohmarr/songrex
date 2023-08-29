@@ -16,16 +16,17 @@
           <img src="/images/songrex.png" alt="Logo" />
         </a>
       </div>
+      <h5>a website about song recommendations</h5>
     </header>
     <nav>
       <aside>
-        <h2>Enjoy the Songs!!</h2>
+        <h2>Enjoy the Songs!</h2>
       </aside>
       <a href="/">Home</a>
       {{#if loggedIn}}
         <button id="logout" href="#" class="btn-no-style">Logout</button>
-        <a href="/input">Add new song!</a>
-        <a href="/liked">View liked songs!</a>
+        <a href="/input">Add New Song</a>
+        <a href="/liked">View Liked Songs</a>
       {{else}}
         <a href="/login">Login</a>
       {{/if}}

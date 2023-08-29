@@ -1,14 +1,14 @@
 <section class="genre">
-  {{#if songs.length}}
-    {{#each songs as |song|}}
-      <div class="song-details">
-        <h3>{{song.title}}</h3>
-        <p>Album: {{song.album}}</p>
-        <p>By: {{song.artist}}</p>
-        {{{song.embed}}}
-      </div>
-    {{/each}}
-  {{else}}
-    <h3>No liked songs found!</h3>
-  {{/if}}
+    {{#if songs.length}}
+        {{#each songs}}
+            <div class="song-details">
+                <h3>{{this.dataValues.title}}</h3>
+                <p>Album: {{this.dataValues.album}}</p>
+                <p>By: {{this.dataValues.artist}}</p>
+                {{{this.dataValues.embed}}}
+            </div>
+        {{/each}}
+    {{else}}
+        <h3>No liked songs found!</h3>
+    {{/if}}
 </section>

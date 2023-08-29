@@ -4,10 +4,10 @@
     <p>Album: {{song.album}}</p>
     <p>By: {{song.artist}}</p>
     {{{ song.embed }}}
-    {{#if song.liked}}
+    {{#if isLiked}}
     <button value="{{song.id}}" class="btn btn-primary like-button">Liked!</button>
     {{else}}
-     <button value="{{song.id}}" class="btn btn-primary like-button">Like Song!</button>
+     <button value="{{song.id}}" class="btn btn-primary like-button">Like Song?</button>
      {{/if}}
   </div>
 </section>
