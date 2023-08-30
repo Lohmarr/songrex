@@ -13,7 +13,3 @@
 * MySQL is used as the database.</p>
 
 <!-- ## Screenshots: -->
-
-## Collaborators
-
-* Lohmar L'Amour
