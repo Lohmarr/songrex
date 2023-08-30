@@ -5,7 +5,7 @@
     <p class="text">By: {{song.artist}}</p>
     {{{ song.embed }}}
     {{#if isLiked}}
-    <button value="{{song.id}}" class="btn btn-primary like-button">Liked!</button>
+    <button value="{{song.id}}" class="btn btn-primary like-button">Remove Like?</button>
     {{else}}
      <button value="{{song.id}}" class="btn btn-primary like-button">Like Song?</button>
      {{/if}}
@@ -13,4 +13,3 @@
 </section>
 
 <script src="/js/like.js"></script>
-<script src="./js/embed.js"></script>

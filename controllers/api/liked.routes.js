@@ -6,7 +6,7 @@ const withAuth = require("../../utils/auth");
 // LIKE or UNLIKE song
 router.post('/:id', withAuth, async (req, res) => {
   try {
-    const song = await Song.findByPk(req.params.id);
+    const song = await Song.findByPk(req.body.songId);
     if (!song) {
       res.status(404).json({ message: 'Song not found' });
       return;

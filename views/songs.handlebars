@@ -1,0 +1,17 @@
+<section class="container">
+  <h3 class="genre-name">All Songs</h3>
+  <br>
+  <form id="search-songs">
+     <input type="text" id="search-input" placeholder="Search for songs...">
+   </form>
+  <h4 class="text">Click Song for Preview</h4>
+  <section class="song-list flex-row justify-center">
+    {{#each songs as |song|}}
+      <div class="song">
+        {{> song-details}}
+      </div>
+    {{/each}}
+  </section>
+</section>
+
+<script src="/js/search.js"></script>

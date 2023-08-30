@@ -8,6 +8,13 @@
   --error: #e42e01;
   --border-radius: 0.3rem;
   --font-family: "Courier New", Courier, monospace;
+  --rock: #990932c8;
+  --rap: #143864bf;
+  --country: #138468bf;
+  --pop: #ad2995bb;
+  --indie: #712ac898;
+  --funk: #db7c17c1;
+  --electronic: #37908db7;
 }
 body {
   font-family: var(--font-family);
@@ -156,11 +163,36 @@ nav a:hover {
 .genre-name {
   text-transform: uppercase;
   color: var(--tertiary);
+  letter-spacing: 3px;
+  text-align: center;
 }
 .select-name {
   text-transform: uppercase;
   letter-spacing: 2px;
   color: var(--primary);
+}
+
+/* Genre Color Palette */
+.rock {
+  background-color: var(--rock);
+}
+.rap {
+  background-color: var(--rap);
+}
+.country {
+  background-color: var(--country);
+}
+.pop {
+  background-color: var(--pop);
+}
+.indie {
+  background-color: var(--indie);
+}
+.funk {
+  background-color: var(--funk);
+}
+.electronic {
+  background-color: var(--electronic);
 }
 
 /* LAYOUT */

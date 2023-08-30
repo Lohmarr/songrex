@@ -41,7 +41,24 @@ router.get("/genre/:id", withAuth, async (req, res) => {
     });
 
     const genre = dbGenreData.get({ plain: true });
-    res.render("genre", { genre, loggedIn: req.session.loggedIn });
+    const genreName = genre.name;
+    console.log(genreName);
+
+    res.render("genre", { genre, genreName, loggedIn: req.session.loggedIn });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+// Get all songs
+router.get("/songs", withAuth, async (req, res) => {
+  try {
+    const dbSongData = await Song.findAll();
+
+    const songs = dbSongData.map((song) => song.get({ plain: true }));
+
+    res.render("songs", { songs, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -98,11 +115,21 @@ router.get("/liked", withAuth, async (req, res) => {
       include: [Song],
     });
 
-    // Add liked songs associated with the user to the songs array
     const songs = [];
+
     for (let i = 0; i < likedSongs.length; i++) {
-      songs.push(await likedSongs[i].getSong());
+      const song = await likedSongs[i].getSong();
+      const songGenreId = song.genre_id;
+
+      const dbGenreData = await Genre.findByPk(songGenreId);
+      const genre = dbGenreData.get({ plain: true });
+      const genreName = genre.name;
+
+      song.genreName = genreName;
+      songs.push(song);
     }
+
+    console.log("songs ==========================", songs);
 
     res.render("liked", {
       songs,

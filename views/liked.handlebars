@@ -1,16 +1,23 @@
-<section class="liked">
-    {{#if songs.length}}
-        {{#each songs}}
-            <div class="song-details">
-                <h3>{{this.dataValues.title}}</h3>
-                <p>Album: {{this.dataValues.album}}</p>
-                <p>By: {{this.dataValues.artist}}</p>
-                {{{this.dataValues.embed}}}
-            </div>
-        {{/each}}
-    {{else}}
-        <h3>No liked songs found!</h3>
-    {{/if}}
-</section>
-
-
+<section> 
+  <h3 class="genre-name">Liked Songs</h3> 
+  <br> 
+  <form id="search-songs"> 
+     <input type="text" id="search-input" placeholder="Search for songs..."> 
+   </form> 
+  <h4 class="text">Click a Song for Preview</h4> 
+  {{#if songs.length}} 
+    <div> 
+      <section class="song-list flex-row justify-center"> 
+      {{#each songs}} 
+        <div class="song"> 
+          {{> liked-details}} 
+        </div> 
+      {{/each}} 
+      </section> 
+    </div> 
+  {{else}} 
+    <h3 class="text">No liked songs found!</h3> 
+  {{/if}} 
+</section> 
+ 
+<script src="/js/search.js"></script>
