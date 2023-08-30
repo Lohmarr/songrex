@@ -17,4 +17,3 @@
 ## Collaborators
 
 * Lohmar L'Amour
-* James Eades
