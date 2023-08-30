@@ -98,7 +98,6 @@ nav a:hover {
 }
 .card header {
   color: #e3e4e3;
-  text-shadow: black 3px 3px;
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -136,11 +135,11 @@ nav a:hover {
   margin: 3%;
   grid-column: span 1;
 }
-/* iframe {
-  height: 200px;
-  width: 400px;
-} */
 
+.centered {
+  display: flex;
+  justify-content: center;
+}
 .genre-item {
   width: calc(33.33% - 1rem);
   margin-bottom: 1rem;

@@ -55,8 +55,19 @@ router.get("/genre/:id", withAuth, async (req, res) => {
 router.get("/songs", withAuth, async (req, res) => {
   try {
     const dbSongData = await Song.findAll();
+    const songs = [];
 
-    const songs = dbSongData.map((song) => song.get({ plain: true }));
+    for (const song of dbSongData) {
+      const songData = song.get({ plain: true });
+      const songGenreId = songData.genre_id;
+      
+      const dbGenreData = await Genre.findByPk(songGenreId);
+      const genre = dbGenreData.get({ plain: true });
+      const genreName = genre.name;
+
+      songData.genreName = genreName;
+      songs.push(songData);
+    }
 
     res.render("songs", { songs, loggedIn: req.session.loggedIn });
   } catch (err) {
