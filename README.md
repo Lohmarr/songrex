@@ -1,8 +1,10 @@
 # Songrex
 
+[Heroku Deployment](https://songrex-f5dc5d07d801.herokuapp.com/)
+
 ## Description
 
-* SongRex is a full-stack web application that allows users to view songs by genre, artist, and album, and also post new songs by embedding their own favorite songs using Spotify's embed feature. This application was built using Node.js and Express.js to create a RESTful API, Handlebars.js as the template engine, and MySQL for the database.
+* Songrex is a full-stack web application that allows users to view songs by genre, artist, and album, and also post new songs by embedding their own favorite songs using Spotify's embed feature. This application was built using Node.js and Express.js to create a RESTful API, Handlebars.js as the template engine, and MySQL for the database.
 
 ## Features
 
